@@ -40,3 +40,98 @@ public interface SampleRepository extends MongoRepository<Sample,String> {
  * }
  * >
  */
+
+/*
+> db.sample.find().pretty();
+{
+	"_id" : ObjectId("630db7531adc981f91e23078"),
+	"name" : "Rahul",
+	"address" : "Pune",
+	"_class" : "com.example.javaaprilmongo.Sample"
+}
+> db.sample.insert({'name':"Akash",'address':"Pune"});
+WriteResult({ "nInserted" : 1 })
+> db.sample.insertOne({'name':"Suhas",'address':"Pune"});
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("63159ff9debb8d45fc359ae9")
+}
+> db.sample.find().pretty();
+{
+	"_id" : ObjectId("630db7531adc981f91e23078"),
+	"name" : "Rahul",
+	"address" : "Pune",
+	"_class" : "com.example.javaaprilmongo.Sample"
+}
+{
+	"_id" : ObjectId("63159fccdebb8d45fc359ae8"),
+	"name" : "Akash",
+	"address" : "Pune"
+}
+{
+	"_id" : ObjectId("63159ff9debb8d45fc359ae9"),
+	"name" : "Suhas",
+	"address" : "Pune"
+}
+> db.sample.insertMany([{'name':"Ravi",'address':"Pune"},{'name':"Giri",'address':"Pune"}]);
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("6315a03bdebb8d45fc359aea"),
+		ObjectId("6315a03bdebb8d45fc359aeb")
+	]
+}
+> db.sample.remove({"_id" : ObjectId("63159ff9debb8d45fc359ae9")});
+WriteResult({ "nRemoved" : 1 })
+> db.sample.find().pretty();
+{
+	"_id" : ObjectId("630db7531adc981f91e23078"),
+	"name" : "Rahul",
+	"address" : "Pune",
+	"_class" : "com.example.javaaprilmongo.Sample"
+}
+{
+	"_id" : ObjectId("63159fccdebb8d45fc359ae8"),
+	"name" : "Akash",
+	"address" : "Pune"
+}
+{
+	"_id" : ObjectId("6315a03bdebb8d45fc359aea"),
+	"name" : "Ravi",
+	"address" : "Pune"
+}
+{
+	"_id" : ObjectId("6315a03bdebb8d45fc359aeb"),
+	"name" : "Giri",
+	"address" : "Pune"
+}
+> db.sample.update({"_id" : ObjectId("6315a03bdebb8d45fc359aeb")},{$set:{"name" : "Giridhar"}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.sample.find().pretty();
+{
+	"_id" : ObjectId("630db7531adc981f91e23078"),
+	"name" : "Rahul",
+	"address" : "Pune",
+	"_class" : "com.example.javaaprilmongo.Sample"
+}
+{
+	"_id" : ObjectId("63159fccdebb8d45fc359ae8"),
+	"name" : "Akash",
+	"address" : "Pune"
+}
+{
+	"_id" : ObjectId("6315a03bdebb8d45fc359aea"),
+	"name" : "Ravi",
+	"address" : "Pune"
+}
+{
+	"_id" : ObjectId("6315a03bdebb8d45fc359aeb"),
+	"name" : "Giridhar",
+	"address" : "Pune"
+}
+>
+
+
+
+
+ */
